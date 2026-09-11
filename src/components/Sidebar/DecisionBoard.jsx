@@ -36,9 +36,6 @@ function DecisionBoard(){
   ]
    }]
 });
-
-  
-
 const [currentDecision, setCurrentDecision] = useState(1);
 const decision = decisions.find(
   (item) => item.id === currentDecision
