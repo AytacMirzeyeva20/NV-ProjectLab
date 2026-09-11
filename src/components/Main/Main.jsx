@@ -4,7 +4,7 @@ import { IoMdHome } from "react-icons/io";
 import { IoIosCafe } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
-function Main() {
+function Main({decision}) {
     const[select,setSelectOpen]=useState("");
     const[result,setResult]=useState("");
     const handleSubmit=()=>{
@@ -25,8 +25,6 @@ const [decisions, setDecisions] = useState([
   },
 ]);
 const [currentDecision, setCurrentDecision] = useState(1);
-const decision = decisions.find(
-(item) => item.id === currentDecision);
   return (
     <section className="bg-gray-50 p-6 md:p-10">
       <div className="mb-8">

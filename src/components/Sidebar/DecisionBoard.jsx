@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import Main from "../Main/Main";
 function DecisionBoard(){
    const [decisions, setDecisions] = useState([
   {
@@ -20,10 +21,24 @@ function DecisionBoard(){
     { id: 3, name: "Lenovo" },
   ],
   },
+  {
+  id: 3,
+  question: "What language should I learn?",
+  options: [
+    { id: 1, name: "English" },
+    { id: 2, name: "German" },
+    { id: 3, name: "Spanish" },
+  ],
+},
 ]);
+const [currentDecision, setCurrentDecision] = useState(1);
+const decision = decisions.find(
+  (item) => item.id === currentDecision
+);
     return(
         <>
-        <Sidebar decisions={decisions}/>
+        <Sidebar decisions={decisions} currentDecision={currentDecision} setCurrentDecision={setCurrentDecision} />
+        <Main decision={decision} />
         </>
     )
 }
