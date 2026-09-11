@@ -80,11 +80,11 @@ const handleDeleteSection = (id) => {
     const updatedDecisions = prev.filter(
       (decision) => decision.id !== id
     );
-
-    if (currentDecision === id && updatedDecisions.length > 0) {
+if (updatedDecisions.length === 0) {
+      setCurrentDecision(null);
+    } else if (currentDecision === id) {
       setCurrentDecision(updatedDecisions[0].id);
     }
-
     return updatedDecisions;
   });
 };
@@ -124,7 +124,7 @@ localStorage.setItem("decisions", JSON.stringify(decisions));
 )}
  <Sidebar decisions={decisions} currentDecision={currentDecision} 
 setCurrentDecision={setCurrentDecision} setFormOpen={setFormOpen} handleDeleteSection={handleDeleteSection} />
-        <Main decision={decision} />
+        <Main decision={decision} key={decision?.id ?? "empty"} /> 
         </>
     )
 }

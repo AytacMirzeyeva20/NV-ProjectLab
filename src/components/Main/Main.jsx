@@ -5,6 +5,9 @@ import { IoIosCafe } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
 function Main({decision}) {
+  if (!decision) {
+    return <p className="text-red-700 font-bold">No decisions available.</p>;
+  }
     const[select,setSelectOpen]=useState("");
     const[result,setResult]=useState("");
     const handleSubmit=()=>{
@@ -73,7 +76,7 @@ function Main({decision}) {
 </div>
 </div>
      <div className="mt-8 flex justify-center">
-  <button onClick={handleSubmit} className="rounded-xl bg-black px-8 py-3 font-medium text-white shadow-md transition duration-300 hover:bg-gray-800 hover:shadow-lg">
+  <button onClick={handleSubmit} className="rounded-xl bg-purple-500 px-8 py-3 font-medium text-white shadow-md transition duration-300 hover:bg-purple-950 hover:shadow-lg">
     Submit Decision
   </button>
 </div>

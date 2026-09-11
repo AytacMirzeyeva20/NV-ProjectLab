@@ -5,10 +5,10 @@ function Home(){
        <section className="relative min-h-200 bg-cover bg-center flex items-center justify-center px-6"
   style={{
     backgroundImage:
-      "url('https://images.unsplash.com/photo-1532073145718-62df48eaa35e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN0dWR5JTIwYWVzdGhldGljfGVufDB8fDB8fHww')",
+      "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtLchh6sYb29mM0oGM8yyV0YhREsNMwSdU8Mkt3XZjSw&s=10')",
   }}>
  
-  <div className="absolute inset-0 bg-black/55"></div>
+  <div className="absolute inset-0 bg-purple-950/60"></div>
   <div className="relative z-10 max-w-4xl text-center text-white">
     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
       Hər qərar, daha yaxşi bir gələcəyə aparir.
