@@ -1,4 +1,4 @@
-function Sidebar({decisions,currentDecision,setCurrentDecision}){
+function Sidebar({decisions,currentDecision,setCurrentDecision,setFormOpen}){
     return(
         <>
  <aside className="w-full rounded-2xl border border-purple-200 bg-purple-50 p-5 md:w-64 mt-3 ml-3">
@@ -15,6 +15,12 @@ My Decisions
 </p>
   </div>
 ))}
+ <div onClick={()=>setFormOpen(true)} className="mt-2 flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-purple-300 bg-white px-4 py-3 text-purple-900 transition hover:border-purple-500 hover:bg-purple-50 hover:shadow-sm">
+  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-100 text-xl font-semibold text-purple-700">
+    +
+  </span>
+  <h3 className="font-semibold">New Decision</h3>
+</div>
         </aside>
         </>
     )

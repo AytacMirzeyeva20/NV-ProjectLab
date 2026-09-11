@@ -13,18 +13,6 @@ function Main({decision}) {
         }
         setResult(select);
     }
-const [decisions, setDecisions] = useState([
-  {
-    id: 1,
-    question: "Where should I study?",
-    options: [
-      { id: 1, name: "Library" },
-      { id: 2, name: "Home" },
-      { id: 3, name: "Cafe" },
-    ],
-  },
-]);
-const [currentDecision, setCurrentDecision] = useState(1);
   return (
     <section className="bg-gray-50 p-6 md:p-10">
       <div className="mb-8">
