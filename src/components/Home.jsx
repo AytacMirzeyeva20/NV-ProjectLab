@@ -2,7 +2,7 @@ import { TiStar } from "react-icons/ti";
 function Home(){
     return(
         <>
-       <section className="relative min-h-125 bg-cover bg-center flex items-center justify-center px-6"
+       <section className="relative min-h-200 bg-cover bg-center flex items-center justify-center px-6"
   style={{
     backgroundImage:
       "url('https://images.unsplash.com/photo-1532073145718-62df48eaa35e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN0dWR5JTIwYWVzdGhldGljfGVufDB8fDB8fHww')",

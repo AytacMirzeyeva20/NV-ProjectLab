@@ -9,7 +9,7 @@ React Router
 React Icons
 LocalStorage
 The first Tailwind.Css coordinate this project.
-React Router installed:
+React Router was installed with:
 npm install react-router-dom
 Then,import this project.
 Features
