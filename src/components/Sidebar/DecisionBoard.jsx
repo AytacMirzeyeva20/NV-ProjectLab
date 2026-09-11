@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Sidebar from "./Sidebar";
 import Main from "../Main/Main";
 function DecisionBoard(){
-   const [decisions, setDecisions] = useState([
+   const [decisions, setDecisions] = useState(()=>{
+    const savedDecisions = localStorage.getItem("decisions");
+  if (savedDecisions) {
+    return JSON.parse(savedDecisions);
+  }
+    return[  
   {
     id: 1,
     question: "Where should I study?",
@@ -28,9 +33,12 @@ function DecisionBoard(){
     { id: 1, name: "English" },
     { id: 2, name: "German" },
     { id: 3, name: "Spanish" },
-  ],
-},
-]);
+  ]
+   }]
+});
+
+  
+
 const [currentDecision, setCurrentDecision] = useState(1);
 const decision = decisions.find(
   (item) => item.id === currentDecision
@@ -46,7 +54,7 @@ return;
 setNewOptions([
     ...newoptions,
     {
-      id: Date.now(),
+  id: newoptions.length + 1,
       name: newoption,
     },
   ]);
@@ -63,17 +71,29 @@ const handleCreateDecision = () => {
     question: newquestion,
     options: newoptions,
   };
-
   setDecisions([...decisions, newDecision]);
-
   setCurrentDecision(newDecision.id);
-
   setFormOpen(false);
-
   setNewQuestion("");
   setNewOption("");
   setNewOptions([]);
 };
+const handleDeleteSection = (id) => {
+  setDecisions((prev) => {
+    const updatedDecisions = prev.filter(
+      (decision) => decision.id !== id
+    );
+
+    if (currentDecision === id && updatedDecisions.length > 0) {
+      setCurrentDecision(updatedDecisions[0].id);
+    }
+
+    return updatedDecisions;
+  });
+};
+useEffect(()=>{
+localStorage.setItem("decisions", JSON.stringify(decisions));
+},[decisions]);
     return(
         <>
         {formopen && (
@@ -105,9 +125,10 @@ const handleCreateDecision = () => {
 </button>
   </div>
 )}
-        <Sidebar decisions={decisions} currentDecision={currentDecision} setCurrentDecision={setCurrentDecision} setFormOpen={setFormOpen} />
+ <Sidebar decisions={decisions} currentDecision={currentDecision} 
+setCurrentDecision={setCurrentDecision} setFormOpen={setFormOpen} handleDeleteSection={handleDeleteSection} />
         <Main decision={decision} />
         </>
     )
 }
-export default DecisionBoard
+export default DecisionBoard;
