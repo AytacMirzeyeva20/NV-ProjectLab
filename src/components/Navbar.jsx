@@ -1,6 +1,7 @@
 import React from 'react'
 import { GiBookCover } from "react-icons/gi";
 import { IoSearch } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <>
@@ -13,17 +14,17 @@ export default function Navbar() {
   </div>
   <ul className="hidden md:flex items-center gap-10">
     <li>
-      <a  href="#" className="relative py-2 text-black font-medium  after:absolute after:left-0 after:bottom-0 after:h-0.5
- after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
-        Home
-      </a>
+     <Link to="/" className="relative py-2 text-black font-medium after:absolute after:left-0 after:bottom-0 after:h-0.5
+ after:w-0 after:bg-black after:transition-all after:duration-300  hover:after:w-full" >
+  Home
+ </Link>
     </li>
 
     <li>
-      <a  href="#" className="relative py-2 text-black font-medium after:absolute after:left-0 after:bottom-0 after:h-0.5
- after:w-0 after:bg-black after:transition-all after:duration-300  hover:after:w-full">
-        My Decisions
-      </a>
+      <Link to="/sidebar" className="relative py-2 text-black font-medium after:absolute after:left-0 after:bottom-0 after:h-0.5
+ after:w-0 after:bg-black after:transition-all after:duration-300  hover:after:w-full" >
+  My Decisions
+ </Link>
     </li>
 
     <li>
